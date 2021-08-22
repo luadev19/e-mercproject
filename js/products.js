@@ -17,7 +17,7 @@ function showProducts(array){
         content += " <img src = " + product.imgSrc  + ">" + "<hr> "+" <br>" ;
         
     }
-    document.getElementById("listado").innerHTML += content;
+    document.getElementById("listado").innerHTML = content;
 }
 
 document.addEventListener("DOMContentLoaded", function (e) {
