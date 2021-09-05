@@ -45,3 +45,29 @@ var getJSONData = function(url){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
 });
+
+function guardarLogin() {
+
+  let data_login = {
+      email_log: document.getElementById("email_log").value
+};
+
+  let data_login_json = JSON.stringify(data_login);
+  localStorage.setItem("data_login",data_login_json);
+  window.localStorage.setItem("data_login", userinput.value);
+}
+
+document.addEventListener("DOMContentLoaded", function(e){
+
+let data_login = localStorage.getItem("data_login");
+let usuario = document.getElementById("usuario");
+let email_log = document.getElementById("email_log");
+
+if (data_login) {
+
+  data_login = JSON.parse(data_login);
+  document.getElementById("usuario").innerHTML = "Usuario: " + data_login.email_log
+ 
+}
+
+});

@@ -54,13 +54,17 @@ input{
     <img id="imagen_login" src="img/login.jpg" alt="logo del ecommerce" >
       
   <form action="index2.html">
-  <input type="email" placeholder="Ingresar e-mail" required> <br>
+
+  <input id="email_log" type="email" placeholder="Ingresar e-mail" required> <br>
+
   <input type="password" placeholder="Contraseña"required> <br>
-  <button>Ingresar</button>
+  <button onclick="guardarLogin()">Ingresar</button>
+  
   
   </form>
-     
   </div>
+
+  
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
