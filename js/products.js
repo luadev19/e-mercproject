@@ -3,6 +3,11 @@ var productsArray= [];
 var minPrice;
 var maxPrice;
 
+function verProducto(){
+    window.location = "product-info.html";
+    
+}
+
 function sortProducts(criterio, array) {
 let result = [];
 
@@ -67,7 +72,9 @@ function showProducts(array){
         content += product.description +"<br>"; 
         content += product.cost +" "+ product.currency + "<br>";
         content +=  product.soldCount + " artículos vendidos" + "<br>";
+        content += `<button style="float:right;" onclick = "verProducto();" >Más info</button>`
         content += " <img src = " + product.imgSrc  + ">" + "<hr> "+" <br>" ;
+
         
     }}
     document.getElementById("listado").innerHTML = content;
