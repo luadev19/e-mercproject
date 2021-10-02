@@ -18,27 +18,34 @@
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="index2.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" href="my-profile.html" id="usuario"></a>
-    </div>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button"id="usuario" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Usuario: 
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="my-profile.html">Mi Perfil</a>
+          <a class="dropdown-item" href="cart.html">Mi carrito</a>
+          <a class="dropdown-item" href="index.html">Cerrar sesión</a>
+        </div>
+      </div>
   </nav>
   <style>
   
- img{
-   width: 300px;
-}
-img:hover{ 
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5)
-}
+
 h2{
   text-align: center;
 }
+img{
+  width: 200px;
+}
 h3{
+  text-align: center;
+}
+h4{
   text-align: center;
 }
 #comments{
@@ -47,7 +54,9 @@ h3{
 #comentar{
   text-align: center;
 }
-
+#related{
+  text-align: center;
+}
 .star-rating {
     direction: rtl;
     display: inline-block;
@@ -74,7 +83,12 @@ h3{
   </style>
 
   <div id="info"></div>
-  <div id="imgs"></div>
+  
+  <div id="imgs" class="row justify-content-center" class="w-75 p-3" style="background-color: #eee;">Width 75% </div>
+  <hr>
+  <h4>Otros usuarios también vieron</h4>
+  <div id="related"></div>
+  
   <hr>
   <a href="products.html">Volver a Productos</a>
   <hr>

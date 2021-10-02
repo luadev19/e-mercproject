@@ -1,11 +1,13 @@
 var commentsArray = [];
+let related = "";
 
 function showInfo(informacion,commentsArray){
 
 let info = "";
 let imgs = "";
 let comments = "";
-
+let productsArray = [];
+let relatedProducts = [];
 
 info += `
            
@@ -14,14 +16,36 @@ info += `
              ${informacion.description}<br>
              ${informacion.cost} ${informacion.currency}<br>
              Cantidad de articulos vendidos: ${informacion.soldCount}<br>
-             Categoria: ${informacion.category}
+             Categoria: ${informacion.category}<br>
              `
-imgs +=  `
-            <img  src="img/prod1_1.jpg" > 
-            <img  src="img/prod1_2.jpg" >
-            <img  src="img/prod1_3.jpg" >
-            <img  src="img/prod1_4.jpg" >
-            `;
+
+             
+imgs +=  `<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    <img src="img/prod1_1.jpg" class="d-block w-100" alt="...">
+  </div>
+  <div class="carousel-item">
+    <img src="img/prod1_2.jpg" class="d-block w-100" alt="...">
+  </div>
+  <div class="carousel-item">
+    <img src="img/prod1_3.jpg" class="d-block w-100" alt="...">
+  </div>
+  <div class="carousel-item">
+    <img src="img/prod1_4.jpg" class="d-block w-100" alt="...">
+  </div>
+</div>
+<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="sr-only">Next</span>
+</a>
+</div>
+
+`;
 
     comentsArray.forEach(function(comment){
 
@@ -33,8 +57,8 @@ imgs +=  `
    
 }
     )
-            
-                        
+
+                    
           
 
 
@@ -43,6 +67,17 @@ imgs +=  `
  document.getElementById("comments").innerHTML = comments;
 }
 
+function showRelatedProducts(productsArray,informacion){
+    informacion.relatedProducts.forEach(function(indice){
+      related +=  "<a href=\"product-info.html\"> <img src = " + productsArray[indice].imgSrc  + ">" + "</a> "; `<br>`
+      related += productsArray[indice].name + " "; `<br>`
+      related += productsArray[indice].cost + " "; 
+      related += productsArray[indice].currency + " "; 
+    
+      document.getElementById("related").innerHTML = related;
+  }
+  )
+}
 
 
 
@@ -62,9 +97,16 @@ document.addEventListener("DOMContentLoaded", function (e) {
          informacion = resultObj.data;
 
             showInfo(informacion,commentsArray);
-    }}
-    
-    )})
+            }
+
+    getJSONData(PRODUCTS_URL).then(function(resultObj){
+      if(resultObj.status=== "ok"){
+            productsArray = resultObj.data;
+            showRelatedProducts(productsArray,informacion);
+            }
+          });
+    });
+  });
 });
 document.addEventListener("DOMContentLoaded", function (e) {
     document.getElementById("stars").innerHTML = `<div class="star-rating">
