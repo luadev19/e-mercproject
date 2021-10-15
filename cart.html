@@ -26,11 +26,16 @@
       .bd-placeholder-img-lg {
         font-size: 3.5rem;
       }
+      .qty {
+        text-align: right;
+      }
+      
     }
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -52,13 +57,66 @@
     </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <div>
+      <h2>Mi carrito</h2>
     </div>
+    
+   <div class="row">
+    <div id="picProduct" class="col-12 col-sm-4"></div>
+    <div id="cartArticles"  class="col-12 col-sm-8"></div>
+    
+  
+</div>
+  
+    <hr>
+    <div id="subtotal">Subtotal:</div>
+    <hr>
+    
+      <h3>Dirección de Envío</h3>
+    <div class="row">
+      <div class="form-row">
+        <div class="col-md-7 p-2">
+          <input type="text" class="form-control" placeholder="Calle">
+        </div>
+        <div class="col-md-2 p-2 ">
+          <input type="text" class="form-control" placeholder="Numero">
+        </div>
+        <div class="col-md-3 p-2">
+          <input type="text" class="form-control" placeholder="Esquina">
+        </div>
+      </div>
+    </div>
+    <div>
+      <hr>
+  <!-- Acá no puedo elegir uno solo, me deja clickear todos -->
+      <h3>Tipo de Envío</h3> 
+      <div class="row">
+      <div class="custom-control custom-radio col-12 col-md-4 ">
+        <input type="radio" id="customRadio1" name="customRadio1" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio1">Envío Premium</label>
+      </div>
+      <div class="custom-control custom-radio col-12 col-md-4 ">
+        <input type="radio" id="customRadio2" name="customRadio2" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio2">Envío Express</label>
+      </div>
+      <div class="custom-control custom-radio col-12 col-md-4 ">
+        <input type="radio" id="customRadio3" name="customRadio3" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio3">Envío Estándar</label>
+      </div>
+    </div>
+   <hr>
+   <!-- Esto me gustaría que para tamaño desktop aparezca en el costado de todo lo demas -->
+   <div class="row">
+<div class="col-md-2 border m-3 p-5" style="background-color: rgb(188, 227, 250);">
+  Subtotal: <br>
+  Costo de envío:
+<hr>
+<H2>Total:</H2>
+    
+    <button type="button" class="btn btn-primary">Finalizar</button>
+  
   </div>
+</div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
