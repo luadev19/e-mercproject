@@ -56,25 +56,23 @@
         </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div>
-      <h2>Mi carrito</h2>
-    </div>
+  <h1>Mi carrito</h1>
+
+<div class="row"> <!-- Acá empiez el row -->
+   
+    <div class="col-md-8"> <!-- Acá empieza el col grande -->
+        <div class="row">
+     <div id="picProduct"  class="col-12 col-sm-3"></div>  
+     <div id="cartArticles" class="col-12 col-sm-8"></div> 
+        </div>
     
-   <div class="row">
-    <div id="picProduct" class="col-12 col-sm-4"></div>
-    <div id="cartArticles"  class="col-12 col-sm-8"></div>
-    
-  
-</div>
-  
+     
     <hr>
     <div id="subtotal">Subtotal:</div>
     <hr>
-    
-      <h3>Dirección de Envío</h3>
-    <div class="row">
-      <div class="form-row">
+ 
+    <h3>Dirección de Envío</h3> <!--DIRECCIÓN DE ENVÍO -->
+    <div class="form-row">
         <div class="col-md-7 p-2">
           <input type="text" class="form-control" placeholder="Calle">
         </div>
@@ -85,39 +83,55 @@
           <input type="text" class="form-control" placeholder="Esquina">
         </div>
       </div>
-    </div>
-    <div>
-      <hr>
-  <!-- Acá no puedo elegir uno solo, me deja clickear todos -->
+
+      <hr> <!--TERMINA DIRECCIÓN DE ENVÍO -->
+   
+      <div>  <!--TIPO DE ENVÍO -->
       <h3>Tipo de Envío</h3> 
-      <div class="row">
-      <div class="custom-control custom-radio col-12 col-md-4 ">
-        <input type="radio" id="customRadio1" name="customRadio1" class="custom-control-input">
-        <label class="custom-control-label" for="customRadio1">Envío Premium</label>
+        
+      <div class="custom-control custom-radio custom-control-inline col-md-4">
+        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+        <label class="custom-control-label" for="customRadioInline1">Envío Premium</label>
       </div>
-      <div class="custom-control custom-radio col-12 col-md-4 ">
-        <input type="radio" id="customRadio2" name="customRadio2" class="custom-control-input">
-        <label class="custom-control-label" for="customRadio2">Envío Express</label>
+      <div class="custom-control custom-radio custom-control-inline col-md-4">
+        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+        <label class="custom-control-label" for="customRadioInline2">Envío Express</label>
       </div>
-      <div class="custom-control custom-radio col-12 col-md-4 ">
-        <input type="radio" id="customRadio3" name="customRadio3" class="custom-control-input">
-        <label class="custom-control-label" for="customRadio3">Envío Estándar</label>
+      <div class="custom-control custom-radio custom-control-inline col-md-3">
+        <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
+        <label class="custom-control-label" for="customRadioInline3">Envío Estándar</label>
       </div>
-    </div>
-   <hr>
-   <!-- Esto me gustaría que para tamaño desktop aparezca en el costado de todo lo demas -->
-   <div class="row">
-<div class="col-md-2 border m-3 p-5" style="background-color: rgb(188, 227, 250);">
-  Subtotal: <br>
-  Costo de envío:
-<hr>
-<H2>Total:</H2>
+
+      </div> <!-- TERMINA TIPO DE ENVÍO -->
+
+      <hr>
+
+    </div><!-- Acá cierra el col grande -->
+
     
-    <button type="button" class="btn btn-primary">Finalizar</button>
+
+
+  <div class="col-md-4"> <!--Acá empieza el col chico  -->
+ <div class="p-2 m-4" style="background-color: azure;"> <!--Acá empieza el resuemn  -->
   
-  </div>
+<div id="resumen_subtotal">
+Subtotal:
 </div>
-  <div id="spinner-wrapper">
+ <br>
+    Costo de envío:
+    <hr>
+    TOTAL:
+<br>
+    <div>
+    <button type="button"  class="btn btn-info mt-4">Finalizar</button>
+    </div> 
+ </div><!--Acá termina el resuemn  -->
+  </div><!--Acá cierra el col chico  -->
+
+ 
+</div> <!-- En este div termina el row -->
+
+<div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
       <div></div>

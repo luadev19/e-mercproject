@@ -18,7 +18,7 @@ function showArticles(array){
     
          ${articles.name} <br>
          ${articles.unitCost} ${articles.currency}<br>
-         <input type="number" name="" id="qtyProduct" onChange"calcSubtotal(${articles.unitCost},${articles.count})" placeholder="cantidad" value="${articles.count}">`
+         <input type="number" name="" id="qtyProduct" onchange="calcSubtotal(${articles.unitCost},${articles.count})" placeholder="cantidad" value="${articles.count}">`
          
          
             }
@@ -41,13 +41,13 @@ document.getElementById("picProduct").innerHTML = picProduct;
 //NO entiendo porque ya que solo estoy usando el JSON que tiene un producto.
 //No sé si deberia usar un for para que recorra el array, tambien supongo que
 // los parametros que le estoy dando a la función no sirven 
-function calcSubtotal(unitCost,count ) {
+function calcSubtotal(unitCost,count) {
 
     let cantidad = parseInt(document.getElementById(`qtyProduct`).value);
-    subtotal = (articles.unitCost * articles.count);
-    document.getElementById(`subtotal`).innerHTML = subtotal
-
-    calcSubtotal();
+    subtotal = (unitCost * cantidad);
+    document.getElementById(`subtotal`).innerHTML = "Subtotal: UYU " + subtotal;
+    document.getElementById(`resumen_subtotal`).innerHTML = "Subtotal: UYU " + subtotal;
+   
     
     
 }
@@ -56,18 +56,18 @@ function calcSubtotal(unitCost,count ) {
 
 
 document.addEventListener("DOMContentLoaded", function(e){
+
     getJSONData(CART_INFO_URL).then(function(resultObj){
 
         if(resultObj.status=== "ok"){
             articlesArray = resultObj.data;
-
             showArticles(articlesArray);
+            let unitCost = articlesArray['articles'][0].unitCost;
+            let cant = articlesArray['articles'][0].count;
+            calcSubtotal(unitCost,cant);
         }
     }
-
     )
-
-    
 });
 
 
