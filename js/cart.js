@@ -18,7 +18,7 @@ function showArticles(array){
     
          ${articles.name} <br>
          ${articles.unitCost} ${articles.currency}<br>
-         <input type="number" name="" id="qtyProduct" onchange="calcSubtotal(${articles.unitCost},${articles.count})" placeholder="cantidad" value="${articles.count}">`
+         <input type="number" name="" id="qtyProduct" onchange="calcSubtotal(${articles.unitCost})" placeholder="cantidad" value="${articles.count}">`
          
          
             }
@@ -37,11 +37,8 @@ document.getElementById("picProduct").innerHTML = picProduct;
 
 }
 
-//esta función me esta complicando bastante, en la consola me dice que subtotal = 0. 
-//NO entiendo porque ya que solo estoy usando el JSON que tiene un producto.
-//No sé si deberia usar un for para que recorra el array, tambien supongo que
-// los parametros que le estoy dando a la función no sirven 
-function calcSubtotal(unitCost,count) {
+
+function calcSubtotal(unitCost) {
 
     let cantidad = parseInt(document.getElementById(`qtyProduct`).value);
     subtotal = (unitCost * cantidad);
@@ -63,8 +60,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             articlesArray = resultObj.data;
             showArticles(articlesArray);
             let unitCost = articlesArray['articles'][0].unitCost;
-            let cant = articlesArray['articles'][0].count;
-            calcSubtotal(unitCost,cant);
+            calcSubtotal(unitCost);
         }
     }
     )
