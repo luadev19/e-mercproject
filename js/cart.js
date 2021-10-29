@@ -8,7 +8,7 @@ var total = 0
 function showArticles(array){
    
    
-   
+    
     for (let i = 0; i < array['articles'].length; i++) {
         let articles = array['articles'][i];
     
