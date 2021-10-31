@@ -8,12 +8,23 @@ document.addEventListener("DOMContentLoaded", function (e) {
 function guardarPerfil() {
 
     let datos_perfil = {
-        datos_perfil: document.getElementById("nombres").value
-        
+        nombres: document.getElementById("nombres").value,
+        email: document.getElementById("email").value,
+        edad: document.getElementById("edad").value,
+        contacto: document.getElementById("contacto").value
   };
   
     let datos_perfil_json = JSON.stringify(datos_perfil);
-    sessionStorage.setItem("datos_perfil",datos_perfil_json);
-    window.sessionStorage.setItem("datos_perfil", input.value);
+    localStorage.setItem("datos_perfil",datos_perfil_json);
+    
   }
   
+
+  
+
+    
+
+    
+
+    
+   

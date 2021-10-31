@@ -72,11 +72,11 @@ function showProducts(array) {
                 `<div class="col-md-6">
                 ${product.name} <br>
                 ${product.description} <br>
-                ${product.cost}" " ${product.currency}  <br>
-                ${product.soldCount} " artículos vendidos" + <br>
-         < button  onclick = "verProducto();" > Más info</button > 
-         <img width='50' src = "  ${product.imgSrc }  >
-</div > `
+                ${product.cost}${product.currency}  <br>
+                ${product.soldCount} artículos vendidos <br>
+                <button  onclick="verProducto()"> Más info</button> 
+                <img width="250" src = "  ${product.imgSrc}"><br><br>
+                </div > `
         
     }}
     document.getElementById("listado").innerHTML = content;

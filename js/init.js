@@ -60,6 +60,7 @@ function guardarLogin() {
 document.addEventListener("DOMContentLoaded", function(e){
 
 let data_login = localStorage.getItem("data_login");
+let datos_perfil = localStorage.getItem("datos_perfil");
 let usuario = document.getElementById("usuario");
 let email_log = document.getElementById("email_log");
 
@@ -67,7 +68,20 @@ if (data_login) {
 
   data_login = JSON.parse(data_login);
   document.getElementById("usuario").innerHTML = "Usuario: " + data_login.email_log
+
+}
+if (datos_perfil) {
+
+  let datos_perfil_json = localStorage.getItem("datos_perfil");
+  let datos_perfil = JSON.parse(datos_perfil_json);
+  document.getElementById("nombres").value = datos_perfil.nombres;
+  document.getElementById("email").value = datos_perfil.email;
+  document.getElementById("edad").value = datos_perfil.edad;
+  document.getElementById("contacto").value = datos_perfil.contacto;
+
+
+
+
  
 }
-
 });
