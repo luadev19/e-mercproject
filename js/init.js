@@ -68,7 +68,7 @@ if (data_login) {
 
   data_login = JSON.parse(data_login);
   document.getElementById("usuario").innerHTML = "Usuario: " + data_login.email_log
-
+//acá se recuperan los datos del perfil y se muestran 
 }
 if (datos_perfil) {
 

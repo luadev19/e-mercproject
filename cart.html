@@ -90,21 +90,76 @@
       <h3>Tipo de Envío</h3> 
         
       <div class="custom-control custom-radio custom-control-inline col-md-4">
-        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" onchange="calcEnvio('Premium')">
         <label class="custom-control-label" for="customRadioInline1">Envío Premium</label>
       </div>
       <div class="custom-control custom-radio custom-control-inline col-md-4">
-        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" onchange="calcEnvio('Express')">
         <label class="custom-control-label" for="customRadioInline2">Envío Express</label>
       </div>
       <div class="custom-control custom-radio custom-control-inline col-md-3">
-        <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
+        <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input" onchange="calcEnvio('Estandar')">
         <label class="custom-control-label" for="customRadioInline3">Envío Estándar</label>
       </div>
 
       </div> <!-- TERMINA TIPO DE ENVÍO -->
 
       <hr>
+
+      <div>  <!--MÉTODO DE PAGO -->
+        <h3>Medio de Pago</h3> 
+          
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Seleccionar
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Seleccionar método de pago</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" onchange="selectTarjeta()">
+                  <label class="custom-control-label" for="customRadio1">Tarjeta de Crédito</label>
+                </div>
+
+                <div class="m-2">
+                  <input type="text" id="tarjNombre" class="form-control" placeholder="Nombres">
+                </div>
+                <div class="m-2">
+                  <input type="text" id="tarjNum" class="form-control" placeholder="Numero de Tarjeta">
+                </div>
+                <div class="m-2">
+                  <input type="text" id="tarjCod" class="form-control" placeholder="CCV">
+                </div>
+
+
+
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" onchange="selectTransf()">
+                  <label class="custom-control-label" for="customRadio2">Transferencia bancaria</label>
+                </div>
+                <div class="m-2">
+                  <input type="text" id="transfNombres" class="form-control" placeholder="Nombres">
+                </div>
+                <div class="m-2" >
+                  <input type="text" id="transfCuenta"class="form-control" placeholder="Numero de cuenta">
+                </div>
+              </div>
+              <div class="modal-footer">
+     
+                <button type="button" class="btn btn-primary">Finalizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div> <!-- TERMINA MÉTODO DE PAGO -->
 
     </div><!-- Acá cierra el col grande -->
 
@@ -118,9 +173,15 @@
 Subtotal:
 </div>
  <br>
+ <div id="resumen_envio">
     Costo de envío:
-    <hr>
+  </div>
+  <hr>
+  <div id="resumen_total">
     TOTAL:
+  </div>
+    
+    
 <br>
     <div>
     <button type="button"  class="btn btn-info mt-4">Finalizar</button>

@@ -4,7 +4,7 @@
 document.addEventListener("DOMContentLoaded", function (e) {
 
 });
-
+//función que guarda datos ingresados 
 function guardarPerfil() {
 
     let datos_perfil = {
